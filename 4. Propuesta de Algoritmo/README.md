@@ -18,7 +18,7 @@ alimento (valor) en un diccionario compuesto de un clave y valor, respectivament
 Es importante recalcar, que en cada paso que da la hormiga, desprende una feromona que indica si aun se encuentra explorando (feromona de exploración: ' - ') o si encontro comida (feromona de hallazgo 
 de aliemnto = ' o ') 
 
-![FEROMONAS1](FEROMONAS1.png) -> ![FEROMONAS2](FEROMONAS2.png)
+![FEROMONAS1](FEROMONAS1.png) ![FEROMONAS2](FEROMONAS2.png)
 
 La exploración finaliza cuando la hormiga halla recolectado todos los alimentos dispuestos en la zona de exploración
 

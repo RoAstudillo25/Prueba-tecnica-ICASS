@@ -1,9 +1,11 @@
-Modelo Entidad-Relación (MER)
+## Modelo Entidad-Relación (MER)
+
+!['MER'](MER.jpeg)
 
 El modelo representa las relaciones entre entidades de una posible base de datos que manejará la organización y 
 jerarquización de distintas colonias de hormigas que pueda llegar a tener Simón. 
 
-Entidades y Atributos
+### Entidades y Atributos
 
   a)	Entidad Hormiga
   
@@ -25,7 +27,7 @@ Entidades y Atributos
   -	descripcion: contiene una breve descripción sobre una colonia en particular (tipo varchar).
 
 
-Relaciones y Cardinalidad
+### Relaciones y Cardinalidad
 
 La importancia de la cardinalidad es fundamental, tanto para el entendimiento como para la ejecución de esta posible base de datos. 
 
@@ -39,45 +41,47 @@ La finalidad de este MER es conducir hacia una base de datos que logre organizar
 logre tener a partir de una cantidad finita de hormigas cuyo tipo y rol sea conocido desde un inicio.
 
 
-Modelo Relacional
+## Modelo Relacional
+
+!['ER'](ER.jpeg)
 
 Se desarrolla a modo de complemento, y entregando una visión formal de lo que podría ser esta base de datos, evidenciando lo 
 explicado acerca de las Llaves Primarias (PK) y Llaves Foráneas (FK) en el Modelo Entidad-Relacion.
 
-Sentencias SQL
+## Sentencias SQL
 
 A partir de la base de datos ‘Formicidae’ (nombre científico de las hormigas) desarrollada en base al punto anterior, se ejecutan una serie 
 de querys con el fin de visualizar los registros almacenados. 
 
 Query #1: Hormigas pertenecientes a la familia real de cada colonia; entiéndase familia real como REINA, PRINCESA y PRINCIPE.
 
-  '''
+  ```sql
   select Ha.tipo as Colonia, Ha.id as ID_Hormiga, R.id as ID_Rol, R.nombre_rol as Rol
   from Hormiga as Ha
   	join Rol as R
       on Ha.id_rol = R.id
   where R.id in (1,2,3)
   order by Colonia;
-  '''
+  ```
 
 Query #2: Cantidad de hormigas OBRERAS por Colonia.
 
-  '''
+  ```sql
   select Colonia, count(ID_Rol) as Cant_Obreras
   from Hormigas_X_Colonia
   where ID_Rol  = 5
   group by Colonia
   order by Cant_Obreras asc;
-  '''
+  ```
 
 Query #3: Mayor número de SOLDADOS entre las colonias. Nombrar dicha colonia como 'Clase Guerrera'.
 
-  '''
+  ```sql
   select concat_ws(' ',Colonia,': Clase Guerrera') as Colonia, count(ID_Rol) as Cant_Soldados
   from Hormigas_X_Colonia
   where ID_Rol = 6
   group by Colonia
   order by Cant_Soldados desc
   limit 1;
-  '''
+  ```
 

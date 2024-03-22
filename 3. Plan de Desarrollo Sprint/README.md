@@ -1,4 +1,4 @@
-## SPRINT 1: CREAR LA BASE DE DATOS
+## Sprint 1: Base de Datos
 
 Primer Sprint del plan de desarrollo, cuyo objetivo es la creación de una base de datos capaz de almacenar toda la información acerca de las hormigas y sus colonias.
 
@@ -22,7 +22,7 @@ tablas, cuidando la relación entre ellas.
 - HU 1.3: Crear base de datos
 
 
-## SPRINT 2: ALGORITMO DE BUSQUEDA DE ALIMENTO
+## Sprint 2: Algoritmo de búsqueda de alimento
 
 La segunda etapa de este proyecto, tiene como objetivo desarrollar un algoritmo capaz de replicar la búsqueda de alimento de la hormigas en un ambiente controlado que actúe como simulador.
 
@@ -46,7 +46,7 @@ Requerimiento 2.4: Establecer métodos para el movimiento de hormigas dentro del
 - HU 2.4: Integrar interacción entre instancias de territorio de exploración y las hormigas
 
  
-## SPRINT 3: ALGORITMO DE ATAQUE/DEFENSA 
+## Sprint 3: Algoritmo de ataque/defensa
 
 Para el tercer sprint de esta planificación, se requiere de un algoritmo que simule la comunican entre hormigas en caso de encontrarse con una amenaza durante la exploración de 
 nuevo territorio o el ataque de una colonia enemiga hacia el hormiguero.

@@ -51,33 +51,33 @@ de querys con el fin de visualizar los registros almacenados.
 
 Query #1: Hormigas pertenecientes a la familia real de cada colonia; entiéndase familia real como REINA, PRINCESA y PRINCIPE.
 
-  """
+  '''
   select Ha.tipo as Colonia, Ha.id as ID_Hormiga, R.id as ID_Rol, R.nombre_rol as Rol
   from Hormiga as Ha
   	join Rol as R
       on Ha.id_rol = R.id
   where R.id in (1,2,3)
   order by Colonia;
-  """
+  '''
 
 Query #2: Cantidad de hormigas OBRERAS por Colonia.
 
-  """
+  '''
   select Colonia, count(ID_Rol) as Cant_Obreras
   from Hormigas_X_Colonia
   where ID_Rol  = 5
   group by Colonia
   order by Cant_Obreras asc;
-  """
+  '''
 
 Query #3: Mayor número de SOLDADOS entre las colonias. Nombrar dicha colonia como 'Clase Guerrera'.
 
-  """
+  '''
   select concat_ws(' ',Colonia,': Clase Guerrera') as Colonia, count(ID_Rol) as Cant_Soldados
   from Hormigas_X_Colonia
   where ID_Rol = 6
   group by Colonia
   order by Cant_Soldados desc
   limit 1;
-  """
+  '''
 
